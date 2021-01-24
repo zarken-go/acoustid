@@ -56,6 +56,6 @@ func TestParseOutputBinaryNotFound(t *testing.T) {
 		},
 	})
 	assert.IsType(t, analyzeErr{}, err)
-	assert.EqualError(t, err, `fpcalc: Analyze(executable file not found in %PATH%)`)
+	assert.EqualError(t, err, `fpcalc: Analyze(executable not found)`)
 	assert.Equal(t, acoustid.Fingerprint{}, Resp)
 }

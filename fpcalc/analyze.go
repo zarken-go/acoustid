@@ -42,7 +42,7 @@ func parseCombinedOutput(Cmd cmdRunner) (acoustid.Fingerprint, error) {
 		if execErr, ok := err.(*exec.Error); ok {
 			if execErr.Err == exec.ErrNotFound {
 				return acoustid.Fingerprint{}, analyzeErr{
-					err: execErr.Err,
+					err: errors.New("executable not found"),
 				}
 			}
 		}
